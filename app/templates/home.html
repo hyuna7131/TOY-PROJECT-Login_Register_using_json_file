@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>홈</title>
+</head>
+<body>
+    <div style="text-align: center;">
+    <h2>홈</h2>
+    {% if 'username' in session %}
+        <p>안녕하세요, {{ session['username'] }}님!</p>
+        <a href="{{ url_for('logout') }}">로그아웃</a>
+    {% else %}
+        <a href="{{ url_for('register') }}">회원가입</a><br>
+        <a href="{{ url_for('login') }}">로그인</a>
+    {% endif %}
+    </div>
+</body>
+</html>
